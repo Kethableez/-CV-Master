@@ -1,0 +1,50 @@
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.4fr 0.7fr;
+}
+
+.col-tools {
+  background-color: bisque;
+}
+
+.col-view {
+  margin: 0 auto;
+  width: calc(595px * 1.5);
+  background-color: aquamarine;
+}
+
+
+
+// .name {
+//   font-size: 1.4rem;
+//   font-weight: 300;
+//   text-transform: uppercase;
+// }
+
+// .title {
+//   font-size: 0.8rem;
+//   text-transform: uppercase;
+//   font-weight: 300;
+// }
+
+// .summary {
+//   margin-top: 1rem;
+// }
+
+
+
+// .cv-row {
+//   display: flex;
+// }
+
+// .center {
+//   justify-content: center;
+// }
+
+// .ppict {
+//   border-radius: 10px;
+//   width: 40%;
+//   object-fit: fill;
+//   aspect-ratio: 1/1;
+// }

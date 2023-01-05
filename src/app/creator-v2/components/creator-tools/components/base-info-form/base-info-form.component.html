@@ -1,0 +1,124 @@
+<form [formGroup]="baseInfoForm">
+  <div class="row mb-3">
+    <div class="col">
+      <label for="firstName" class="form-label">First name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="First name"
+        formControlName="firstName"
+      />
+    </div>
+    <div class="col">
+      <label for="lastName" class="form-label">Last name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Last name"
+        formControlName="lastName"
+      />
+    </div>
+    <div class="col">
+      <label for="birthdate" class="form-label">Birthdate</label>
+      <input
+        type="date"
+        class="form-control"
+        id="birthdate"
+        placeholder="Birthdate"
+        formControlName="birthdate"
+      />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="jobTitle" class="form-label">Job title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="jobTitle"
+        placeholder="Job Title"
+        formControlName="jobTitle"
+      />
+    </div>
+    <div class="col">
+      <label for="country" class="form-label">Country</label>
+      <input
+        type="text"
+        class="form-control"
+        id="country"
+        placeholder="Country"
+        formControlName="country"
+      />
+    </div>
+    <div class="col">
+      <label for="city" class="form-label">City</label>
+      <input
+        type="text"
+        class="form-control"
+        id="city"
+        placeholder="City"
+        formControlName="city"
+      />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="email" class="form-label">e-mail</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="e-mail"
+        formControlName="email"
+      />
+    </div>
+    <form [formGroup]="phoneForm" class="col">
+      <label for="phoneNumber" class="form-label">Phone number</label>
+      <div class="input-group mb-3">
+        <select
+          style="flex: 0.25 0.25 auto"
+          class="form-select"
+          formControlName="dialingCode"
+        >
+          <option disabled selected [value]="''">Select dialing number</option>
+          <option [value]="48">48</option>
+          <option [value]="49">49</option>
+          <option [value]="50">50</option>
+        </select>
+        <input type="text" class="form-control" formControlName="phoneNumber" placeholder="999888666" />
+      </div>
+    </form>
+  </div>
+  <div class="row mb-3" formArrayName="links">
+    <label for="phoneNumber" class="form-label">Links</label>
+    <div
+      class="input-group mb-3"
+      *ngFor="let link of links.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <select
+        style="flex: 0.25 0.25 auto"
+        class="form-select"
+        formControlName="type"
+      >
+        <option *ngFor="let type of linkTypes" [value]="type"> {{ type }}</option>
+      </select>
+      <input type="text" class="form-control" formControlName="url" />
+      <button class="btn btn-outline-danger" type="button" id="button-addon2" (click)="removeLink(i)">
+        <i class="bi bi-trash"></i>
+      </button>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+      <button class="btn btn-success" type="button" (click)="addLink()">Add link</button>
+    </div>
+  </div>
+</form>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary" type="button"  [disabled]="baseInfoForm.invalid">Done</button>
+</div>
+
