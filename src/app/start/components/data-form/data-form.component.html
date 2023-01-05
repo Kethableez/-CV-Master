@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="dataForm">
+      <div class="row g-3 mb-3">
+        <div class="col-md-4">
+          <label for="firstName" class="form-label">First name</label>
+          <input type="firstName" formControlName="firstName" class="form-control" id="firstName">
+        </div>
+        <div class="col-md-4">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="lastName" formControlName="lastName" class="form-control" id="lastName">
+        </div>
+        <div class="col-md-4">
+          <label for="jobTitle" class="form-label">Job Title</label>
+          <input type="jobTitle" formControlName="jobTitle" class="form-control" id="jobTitle">
+        </div>
+      </div>
+      <div class="row g-3 mb-3">
+        <div class="col-md-12">
+          <label for="lang" class="form-label">Language</label>
+          <select id="lang" class="form-select" formControlName="lang">
+            <option selected> Select Language</option>
+            <option value="PL"> PL </option>
+            <option value="EN"> EN </option>
+          </select>
+
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" id="customConsentChbx" formControlName="consent">
+            <label class="form-check-label" for="customConsentChbx">
+              Custom consent
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mb-3" *ngIf="dataForm.controls.consent.value">
+        <div class="col-md-12">
+          <div class="form-floating">
+            <textarea class="form-control" formControlName="customConsent" placeholder="Custom consent" id="customConsent" style="height: 100px; resize: none"></textarea>
+            <label for="customConsent">Custom consent</label>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" [disabled]="dataForm.invalid" (click)="onSubmit()">Submit</button>
+    </form>
+
+  </div>
+</div>

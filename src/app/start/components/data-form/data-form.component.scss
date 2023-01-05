@@ -1,0 +1,11 @@
+input[type=checkbox]:checked {
+  textarea {
+    visibility: hidden !important;
+  }
+}
+
+input[type=checkbox]:not(:checked) {
+  textarea {
+    visibility: hidden I !important;
+  }
+}

@@ -1,0 +1,50 @@
+.content {
+  margin: 1rem 0;
+  position: relative;
+
+  .content-header {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom: 1px solid #323b4c;
+    margin-bottom: 0.5rem;
+  }
+}
+
+ktbz-add-button {
+  display: none;
+  }
+
+i {
+  color: #949494;
+  display: none;
+  font-size: 1rem;
+  position: absolute;
+  cursor: pointer;
+  top: .5rem;
+  right: .5rem;
+  transition: .2s ease-in-out;
+  &:hover {
+    color: #883131
+  }
+  &:active {
+    color: #a83d3d
+
+  }
+}
+
+.content.focus {
+    border: 1px dashed #c1bebe;
+    border-radius: 15px;
+    padding: 1rem;
+    ktbz-add-button {
+      display: block;
+    }
+    .remove-item {
+      display: block;
+    }
+
+    i {
+      display: block;
+    }
+  }

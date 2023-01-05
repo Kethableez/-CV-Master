@@ -1,0 +1,37 @@
+<!-- Mocked -->
+
+<div class="cv-card">
+  <div class="cv-col-sm">
+    <div class="cv-row center">
+      <img class="ppict" src="https://www.mnp.ca/-/media/foundation/integrations/personnel/2020/12/16/13/57/personnel-image-4483.jpg?h=800&w=600&hash=9D5E5FCBEE00EB562DCD8AC8FDA8433D">
+    </div>
+
+    <div class="cv-row">
+      asd
+    </div>
+
+    <div class="cv-row">
+      asd
+    </div>
+  </div>
+  <div class="cv-col-lg">
+    <div class="cv-header">
+      <div class="name">
+        <strong>Amadeusz</strong> Janiszyn
+      </div>
+      <div class="title">
+        Frontend Developer
+      </div>
+      <div class="summary">
+        I am Computer Science student at Wrocław University of Science
+        and Technology. I deal with web applications professionally. I am fast
+        learner and I can adapt quickly to a new environment.
+        I enjoy to expand my knowledge about new technologies. Recently I
+        started working with neural networks and machine learning in my
+        spare time.
+      </div>
+    </div>
+    <ng-template #contents></ng-template>
+    <ktbz-add-button [type]="'content'" (clicked)="addContent($event)"></ktbz-add-button>
+</div>
+<ng-container *ngIf="rmTrigger$ | async"></ng-container>

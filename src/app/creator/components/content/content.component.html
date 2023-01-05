@@ -1,0 +1,9 @@
+<div class="content" [class.focus]="focus">
+  <i class="bi bi-trash-fill" (click)="removeSelf()"></i>
+  <div class="content-header" [contentEditable]="true" [draggable]="true">
+    {{ title }}
+  </div>
+  <ng-template #items></ng-template>
+  <ktbz-add-button [type]="'item'"(clicked)="addItem()" ></ktbz-add-button>
+</div>
+<ng-container *ngIf="rmTrigger$ | async"></ng-container>

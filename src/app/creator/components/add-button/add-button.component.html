@@ -1,0 +1,34 @@
+<ng-container *ngIf="type === 'content'; else item">
+  <div
+    class="add-content"
+    [ngClass]="expanded ? 'expanded' : 'short'"
+    (click)="expand()"
+  >
+    <ng-container *ngIf="expanded; else short">
+      <button
+        class="content-button"
+        (click)="buttonClicked(button.type)"
+        *ngFor="let button of buttons"
+      >
+        <i [className]="button.icon"></i>
+        <span>{{ button.label }}</span>
+      </button>
+    </ng-container>
+    <ng-template #short>
+      <span>Add Content</span>
+      <span class="ic">+</span>
+    </ng-template>
+  </div>
+</ng-container>
+<ng-template #item>
+  <div class="add-content item">
+    <button
+    class="content-button"
+    (click)="buttonClicked(button.type)"
+    *ngFor="let button of buttons"
+  >
+    <i [className]="button.icon"></i>
+    <span>{{ button.label }}</span>
+  </button>
+  </div>
+</ng-template>
